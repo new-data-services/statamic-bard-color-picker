@@ -1,0 +1,40 @@
+{
+    "name": "nds/statamic-bard-colors",
+    "keywords": ["statamic", "bard", "textstyle", "color"],
+    "description": "Statamic setting Text Color with Bard",
+    "license": "proprietary",
+    "author": "new-data-services",
+    "version": "1.0.0",
+    "type": "statamic-addon",
+    "authors": [
+        {
+            "name": "new-data-services GmbH",
+            "role": "Manufacturer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "statamic/cms": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nds\\StatamicBardColors\\": "src"
+        }
+    },
+    "extra": {
+        "statamic": {
+            "name": "Statamic Bard Colors",
+            "description": "Add text colors to Statamic Bard editor"
+        },
+        "laravel": {
+            "providers": [
+                "Nds\\StatamicBardColors\\ServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "pixelfear/composer-dist-plugin": true
+        }
+    }
+}
