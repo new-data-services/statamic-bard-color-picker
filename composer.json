@@ -1,5 +1,5 @@
 {
-    "name": "nds/statamic-bard-colors",
+    "name": "ndx/statamic-bard-colors",
     "keywords": ["statamic", "bard", "textstyle", "color"],
     "description": "Statamic setting Text Color with Bard",
     "license": "proprietary",

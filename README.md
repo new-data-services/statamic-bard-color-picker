@@ -15,7 +15,7 @@ We wanted to Build a nativ felt Bard Plugin for Text Colors with all features th
 You can search for this addon in the `Tools > Addons` section of the Statamic control panel and click **install**, or run the following command from your project root:
 
 ``` bash
-composer require nds/statamic-bard-colors
+composer require ndx/statamic-bard-colors
 ```
 
 ## How to Use
