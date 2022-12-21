@@ -1,6 +1,6 @@
 <?php
 
-namespace Nds\StatamicBardColors;
+namespace Ndx\BardColorPicker;
 
 use Statamic\Statamic;
 use Statamic\Fieldtypes\Bard\Augmentor;
@@ -14,27 +14,34 @@ class ServiceProvider extends AddonServiceProvider
         __DIR__ . '/../dist/js/addon.js',
     ];
 
-    public function register()
+    public function bootAddon()
     {
-        parent::register();
-
-        $this->mergeConfigFrom(__DIR__ . '/../config/colors.php', 'statamic.bard-text-colors');
+        Augmentor::addMark(Color::class);
     }
 
-    public function boot()
+    protected function bootConfig(): self
     {
-        parent::boot();
+        $this->mergeConfigFrom(__DIR__ . '/../config/bard-color-picker.php', 'statamic.bard-color-picker');
 
-        if ($this->app->runningInConsole()) {
-            $this->publishes([
-                __DIR__ . '/../config/colors.php' => config_path('statamic/bard-text-colors.php'),
-            ], 'statamic-bard-colors');
-        }
+        $this->publishes([
+            __DIR__ . '/../config/bard-color-picker.php' => config_path('statamic/bard-color-picker.php'),
+        ], 'bard-color-picker-config');
 
         Statamic::provideToScript([
-            'bard-text-colors' => config('statamic.bard-text-colors'),
+            'bard-color-picker' => config('statamic.bard-color-picker'),
         ]);
 
-        Augmentor::addMark(Color::class);
+        return $this;
+    }
+
+    protected function bootTranslations(): self
+    {
+        $this->loadTranslationsFrom(__DIR__ . '/../lang', 'bard-color-picker');
+
+        $this->publishes([
+            __DIR__ . '/../lang' => app()->langPath() . '/vendor/bard-color-picker',
+        ], 'bard-color-picker-translations');
+
+        return $this;
     }
 }

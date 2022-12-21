@@ -1,46 +1,47 @@
-# Statamic Bard Color Plugin
+<!-- statamic:hide -->
 
-We wanted to Build a nativ felt Bard Plugin for Text Colors with all features that are provided by Bard.
+# Bard Color Picker
+
+<!-- /statamic:hide -->
+
+> Text color picker with swatches for Bard fields.
 
 ## Features
 
-- Set Color for text in the Bard editor
-- Moveable Button to specific position
-- Usage of Build in Color Picker
-- Button Color State on Cursor position
-- Flexibility with publischable recommended color config
+- Set text color in Bard fields
+- Customizable layouts
+- Predefined color swatches
+- Support for HEX, RGB, CMYK and more
+- Beautiful and easy to use color panel
 
-## How to Install
+## Installation
 
-You can search for this addon in the `Tools > Addons` section of the Statamic control panel and click **install**, or run the following command from your project root:
-
-``` bash
-composer require ndx/statamic-bard-colors
-```
-
-## How to Use
-
-Just go into the Bard set and move the button to the position u want it to be and activate it.
-Now the user can just pick a color and write or mark text where the selected color will be applied.
-
-![Preview of open text color panel](preview.png "Text Color Panel")
-
-## Customize the Color Config
+You can search for this addon in the `Tools > Addons` section of the Statamic control panel and click **install** or require it using Composer:
 
 ``` bash
-php artisan vendor:publish --tag=statamic-bard-colors
+composer require ndx/statamic-bard-color-picker
 ```
 
-Fill the recommended array with colors and that the user should get recommended.
+## How to use
 
-```php
-'recommended' => [
-    '#B12525',
-    '#4FB125',
-    '#2567B1',
-]
+Open the blueprint or fieldset that contains your Bard field, open the settings of that field and activate the text color button. 
+
+![Preview of open text color panel](preview.png "Text color panel")
+
+## Configuration
+
+If you want to change the layout, components or predefined colors, publish the configuration file with the following command:
+
+``` bash
+php artisan vendor:publish --tag=bard-color-picker-config
 ```
 
-This configuration will than looks like this:
+This addon uses [Simonwep's Pickr package](https://github.com/Simonwep/pickr) and the hood and supports many configuration options including different layouts.
 
-![Preview of added recommended colors in config](preview_color_swatches.png "Added colors to recommended config")
+Have a look at the [configuration file](config/bard-color-picker.php) for details.
+
+## About us
+
+We develop digital solutions for all kinds of disciplines. From the idea and concepts to implementation and operation.
+
+Visit our website: [new-data-services.de](https://new-data-services.de/)

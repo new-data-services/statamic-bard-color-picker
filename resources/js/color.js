@@ -34,7 +34,7 @@ export default class TextColor {
     commands({ type, toggleMark, updateMark }) {
         return {
             toggleColor: (attrs) => toggleMark(type, attrs),
-            color: (attrs) => updateMark(type, attrs),
+            setColor: (attrs) => updateMark(type, attrs),
         };
     }
 

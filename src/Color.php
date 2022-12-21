@@ -1,6 +1,6 @@
 <?php
 
-namespace Nds\StatamicBardColors;
+namespace Ndx\BardColorPicker;
 
 use ProseMirrorToHtml\Marks\Mark;
 
@@ -9,11 +9,6 @@ class Color extends Mark
     protected $markType = 'color';
 
     protected $tagName = 'span';
-
-    public function matching(): bool
-    {
-        return $this->mark->type === $this->markType;
-    }
 
     public function tag(): ?array
     {
