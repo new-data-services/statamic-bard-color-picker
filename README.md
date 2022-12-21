@@ -30,7 +30,7 @@ Open the blueprint or fieldset that contains your Bard field, open the settings 
 
 ## Configuration
 
-If you want to change the layout, components or predefined colors, publish the configuration file with the following command:
+If you want to change the layout, components or predefined colors, make sure that the configuration file is published by entering the following command:
 
 ``` bash
 php artisan vendor:publish --tag=bard-color-picker-config
