@@ -26,7 +26,7 @@
 
         mounted() {
             const { state } = this.editor;
-            this.defaultColor = state.schema.marks.color.attrs.color.default;
+            this.defaultColor = state.schema.marks.textColor.attrs.color.default;
 
             this.config = Statamic.$config.get('bard-color-picker');
 
@@ -52,7 +52,7 @@
                     this.selection = ! cursor;
 
                     if (cursor) {
-                        const colorMark = cursor.marks().find(mark => mark.type.name === 'color');
+                        const colorMark = cursor.marks().find(mark => mark.type.name === 'textColor');
 
                         if (this.dontSetColorOnNextCursorUpdate) {
                             this.dontSetColorOnNextCursorUpdate = false;

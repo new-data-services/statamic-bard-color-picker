@@ -1,7 +1,7 @@
 {
     "name": "ndx/statamic-bard-color-picker",
     "description": "Text color picker with swatches for Bard fields",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "type": "statamic-addon",
     "license": "proprietary",
     "author": "NEW DATA SERVICES",

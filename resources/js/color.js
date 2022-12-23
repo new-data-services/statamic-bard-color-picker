@@ -3,7 +3,7 @@ const { markInputRule } = commands;
 
 export default class TextColor {
     name() {
-        return 'color';
+        return 'textColor';
     }
 
     schema() {
