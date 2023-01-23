@@ -6,3 +6,7 @@
 
 # 1.0.2
 - Change Tiptap mark name to be compatible with other text color addons
+
+# 1.0.3
+- Prepare for breaking changes that are coming with Statamic 3.4 / TipTap 2
+- Fix typo
