@@ -13,6 +13,7 @@
 - Predefined color swatches
 - Support for HEX, RGB, CMYK and more
 - Beautiful and easy to use color panel
+- Ready for Tiptap 2 (Statamic 3.4)
 
 ## Installation
 

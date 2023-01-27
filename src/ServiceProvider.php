@@ -9,12 +9,20 @@ use Statamic\Providers\AddonServiceProvider;
 class ServiceProvider extends AddonServiceProvider
 {
     protected $scripts = [
-        __DIR__ . '/../dist/js/addon.js',
+        __DIR__ . '/../dist/js/bard-color-picker.js',
+    ];
+
+    protected $stylesheets = [
+        __DIR__ . '/../dist/css/classic.min.css',
+        __DIR__ . '/../dist/css/monolith.min.css',
+        __DIR__ . '/../dist/css/nano.min.css',
     ];
 
     public function bootAddon()
     {
-        Augmentor::addMark(Color::class);
+        Augmentor::addExtension('color', new Color());
+
+        $this->bootAddonStylesheets();
     }
 
     protected function bootConfig(): self
@@ -41,5 +49,18 @@ class ServiceProvider extends AddonServiceProvider
         ], 'bard-color-picker-translations');
 
         return $this;
+    }
+
+    protected function bootStylesheets(): self
+    {
+        // skip default behaviour
+        return $this;
+    }
+
+    protected function bootAddonStylesheets(): void
+    {
+        $theme = config('statamic.bard-color-picker.theme', 'nano');
+
+        $this->registerStylesheet(__DIR__ . "/../dist/css/{$theme}.min.css");
     }
 }

@@ -2,23 +2,19 @@
 
 namespace Ndx\BardColorPicker;
 
-use ProseMirrorToHtml\Marks\Mark;
+use Tiptap\Core\Mark;
+use Tiptap\Utils\HTML;
 
 class Color extends Mark
 {
-    protected $markType = 'color';
+    public static $name = 'textColor';
 
-    protected $tagName = 'span';
-
-    public function tag(): ?array
+    public function renderHTML($mark, $HTMLAttributes = [])
     {
         return [
-            [
-                'tag'   => 'span',
-                'attrs' => [
-                    'style' => "color: {$this->mark->attrs->color};",
-                ],
-            ],
+            'span',
+            HTML::mergeAttributes(['style' => "color: {$mark->attrs->color};"]),
+            0,
         ];
     }
 }

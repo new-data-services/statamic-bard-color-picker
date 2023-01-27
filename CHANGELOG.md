@@ -10,3 +10,7 @@
 # 1.0.3
 - Prepare for breaking changes that are coming with Statamic 3.4 / TipTap 2
 - Fix typo
+
+# 1.1.0
+- Compatibility with Statamic 3.4
+- General refactoring

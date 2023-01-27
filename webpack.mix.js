@@ -1,3 +1,5 @@
-const mix = require("laravel-mix");
+const mix = require('laravel-mix');
 
-mix.js("resources/js/addon.js", "dist/js/addon.js").vue({ version: 2 });
+mix
+    .js('resources/js/bard.js', 'dist/js/bard-color-picker.js').vue({ version: 2 })
+    .copy('node_modules/@simonwep/pickr/dist/themes', 'dist/css');
