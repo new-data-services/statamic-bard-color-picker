@@ -23,6 +23,12 @@ You can search for this addon in the `Tools > Addons` section of the Statamic co
 composer require ndx/statamic-bard-color-picker
 ```
 
+You are running **Statamic 3.3.x**? Then use version 1.0 of the addon:
+
+``` bash
+composer require ndx/statamic-bard-color-picker "^1.0.0"
+```
+
 ## How to use
 
 Open the blueprint or fieldset that contains your Bard field, open the settings of that field and activate the text color button. 
