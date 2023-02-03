@@ -44,6 +44,7 @@
 
             this.pickr = new Pickr({
                 el: this.$refs.pickr,
+                container: '#statamic',
                 default: this.defaultColor,
                 defaultRepresentation: ['hex', 'rgba', 'hsla', 'hsva', 'cmyk'].find(interaction => this.config.interactions[interaction]),
                 theme: this.config.theme,

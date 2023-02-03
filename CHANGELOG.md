@@ -14,3 +14,6 @@
 # 1.1.0
 - Compatibility with Statamic 3.4
 - General refactoring
+
+# 1.1.1
+- Adjust vendor publishing for better compatibility with color fieldtypes
