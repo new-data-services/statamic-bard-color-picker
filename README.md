@@ -13,7 +13,7 @@
 - Predefined color swatches
 - Support for HEX, RGB, CMYK and more
 - Beautiful and easy to use color panel
-- Ready for Tiptap 2 (Statamic 3.4)
+- Ready for Tiptap 2 (Statamic 3.4+)
 
 ## Installation
 
@@ -21,12 +21,6 @@ You can search for this addon in the `Tools > Addons` section of the Statamic co
 
 ``` bash
 composer require ndx/statamic-bard-color-picker
-```
-
-You are running **Statamic 3.3.x**? Then use version 1.0 of the addon:
-
-``` bash
-composer require ndx/statamic-bard-color-picker "^1.0.0"
 ```
 
 ## How to use

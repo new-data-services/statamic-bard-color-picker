@@ -1,6 +1,6 @@
 <?php
 
-it('renders text colors marks', function () {
+it('renders text color marks', function () {
 
     $bard = new \Statamic\Fieldtypes\Bard();
 
