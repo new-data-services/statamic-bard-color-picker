@@ -6,7 +6,7 @@
         "prod": "cross-env NODE_ENV=production mix --production --mix-config=./webpack.mix"
     },
     "devDependencies": {
-        "@simonwep/pickr": "^1.8.2",
+        "@simonwep/pickr": "1.8.2",
         "autoprefixer": "^10.4.0",
         "cross-env": "^7.0",
         "laravel-mix": "^6.0.49",

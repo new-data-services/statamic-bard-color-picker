@@ -1,7 +1,6 @@
 {
     "name": "ndx/statamic-bard-color-picker",
     "description": "Text color picker with swatches for Bard fields",
-    "version": "1.2.0",
     "type": "statamic-addon",
     "license": "proprietary",
     "author": "NEW DATA SERVICES",
@@ -12,12 +11,12 @@
         }
     ],
     "require": {
-        "php": "^8.0",
         "statamic/cms": "^3.4 || ^4.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^7.0",
-        "pestphp/pest": "^1.22"
+        "orchestra/testbench": "^8.0",
+        "pestphp/pest": "^2.34",
+        "laravel/pint": "^1.15"
     },
     "autoload": {
         "psr-4": {
@@ -30,6 +29,8 @@
         }
     },
     "scripts": {
+        "phpcs": "vendor/bin/pint -v --test",
+        "phpcs:fix": "vendor/bin/pint",
         "test": "vendor/bin/pest"
     },
     "extra": {

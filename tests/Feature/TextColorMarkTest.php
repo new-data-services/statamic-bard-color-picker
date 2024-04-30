@@ -6,12 +6,12 @@ it('renders text color marks', function () {
 
     $content = [
         [
-            'type' => 'paragraph',
+            'type'    => 'paragraph',
             'content' => [
                 [
-                    'type' => 'text',
+                    'type'  => 'text',
                     'marks' => [[
-                        'type' => 'textColor',
+                        'type'  => 'textColor',
                         'attrs' => ['color' => '#01D7B0'],
                     ]],
                     'text' => 'And the world will be as one',
