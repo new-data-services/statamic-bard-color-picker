@@ -12,6 +12,7 @@ return [
     | Supported: "classic", "monolith", "nano"
     |
     */
+
     'theme' => 'nano',
 
     /*
@@ -19,6 +20,7 @@ return [
     | Main components
     |--------------------------------------------------------------------------
     */
+
     'components' => [
         'preview' => true, // comparison between old and new color
         'opacity' => true, // opacity slider
@@ -30,6 +32,7 @@ return [
     | Pickr swatches (recommended colors)
     |--------------------------------------------------------------------------
     */
+
     'recommended' => [
         //'#FF269E',
         //'#01D7B0',
@@ -40,6 +43,7 @@ return [
     | Input / output options
     |--------------------------------------------------------------------------
     */
+
     'interactions' => [
         'hex'   => false,
         'rgba'  => false,

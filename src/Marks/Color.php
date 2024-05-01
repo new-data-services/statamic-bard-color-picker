@@ -1,6 +1,6 @@
 <?php
 
-namespace Ndx\BardColorPicker;
+namespace Ndx\BardColorPicker\Marks;
 
 use Tiptap\Core\Mark;
 use Tiptap\Utils\HTML;

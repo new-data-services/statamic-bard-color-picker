@@ -2,6 +2,7 @@
 
 namespace Ndx\BardColorPicker;
 
+use Ndx\BardColorPicker\Marks\Color;
 use Statamic\Fieldtypes\Bard\Augmentor;
 use Statamic\Providers\AddonServiceProvider;
 use Statamic\Statamic;

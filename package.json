@@ -1,21 +1,31 @@
 {
     "private": true,
+    "type": "module",
     "scripts": {
-        "watch": "cross-env NODE_ENV=development mix watch --mix-config=./webpack.mix",
-        "dev": "cross-env NODE_ENV=development mix --mix-config=./webpack.mix",
-        "prod": "cross-env NODE_ENV=production mix --production --mix-config=./webpack.mix"
+        "watch": "npx mix watch",
+        "dev": "npx mix",
+        "prod": "npx mix --production",
+        "eslint": "npx eslint resources/js",
+        "eslint:fix": "npx eslint resources/js --fix"
     },
+    "dependencies": {},
     "devDependencies": {
-        "@simonwep/pickr": "1.8.2",
-        "autoprefixer": "^10.4.0",
-        "cross-env": "^7.0",
+        "@eslint/js": "^9.1.1",
+        "@simonwep/pickr": "^1.9.0",
+        "autoprefixer": "^10.4.19",
+        "eslint": "^9.1.1",
+        "eslint-plugin-vue": "^9.25.0",
         "laravel-mix": "^6.0.49",
         "resolve-url-loader": "^5.0.0",
-        "sass": "^1.58.0",
+        "sass": "^1.76.0",
         "sass-loader": "^12.1.0",
         "tinycolor2": "^1.6.0",
         "vue-loader": "^15.9.8",
-        "vue-template-compiler": "^2.6.14"
+        "vue-template-compiler": "^2.7.16"
     },
-    "dependencies": {}
+    "browserslist": {
+        "defaults": [
+            "> 2%"
+        ]
+    }
 }
