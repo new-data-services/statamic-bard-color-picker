@@ -1,0 +1,29 @@
+name: Run Tests
+
+on: [push, pull_request]
+
+jobs:
+
+  composer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite
+          coverage: none
+      - run: composer update --prefer-dist --no-interaction
+      - run: composer phpcs
+      - run: composer test
+
+  node:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+      - run: yarn
+      - run: yarn eslint
+      - run: yarn prod
