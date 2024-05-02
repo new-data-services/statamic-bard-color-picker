@@ -13,7 +13,6 @@
 - Predefined color swatches
 - Support for HEX, RGB, CMYK and more
 - Beautiful and easy to use color panel
-- Ready for Tiptap 2 (Statamic 3.4+)
 
 ## Installation
 
@@ -27,7 +26,7 @@ composer require ndx/statamic-bard-color-picker
 
 Open the blueprint or fieldset that contains your Bard field, open the settings of that field and activate the text color button. 
 
-![Preview of open text color panel](preview.png "Text color panel")
+![Preview of open text color panel](docs/preview.png)
 
 ## Configuration
 
