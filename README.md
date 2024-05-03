@@ -45,3 +45,13 @@ Have a look at the [configuration file](config/bard-color-picker.php) for detail
 We develop digital solutions for all kinds of disciplines. From the idea and concepts to implementation and operation.
 
 Visit our website: [new-data-services.de](https://new-data-services.de/)
+
+<!-- statamic:hide -->
+
+---
+
+<a href="https://statamic.com/addons/new-data-services/bard-color-picker"><img src="https://img.shields.io/badge/Statamic-3.4+-FF269E?style=for-the-badge"></a>
+<a href="https://packagist.org/packages/ndx/statamic-bard-color-picker"><img src="https://img.shields.io/packagist/v/ndx/statamic-bard-color-picker?style=for-the-badge"></a>
+<a href="https://packagist.org/packages/ndx/statamic-bard-color-picker"><img src="https://img.shields.io/packagist/dt/ndx/statamic-bard-color-picker?style=for-the-badge"></a>
+
+<!-- /statamic:hide -->
