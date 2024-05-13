@@ -36,7 +36,7 @@ If you want to change the layout, components or predefined colors, make sure tha
 php artisan vendor:publish --tag=bard-color-picker-config
 ```
 
-This addon uses [Simonwep's Pickr package](https://github.com/Simonwep/pickr) under the hood and supports many configuration options including different layouts.
+This addon uses the [@simonwep/pickr](https://github.com/Simonwep/pickr) package under the hood and supports many configuration options including different layouts.
 
 Have a look at the [configuration file](config/bard-color-picker.php) for details.
 
