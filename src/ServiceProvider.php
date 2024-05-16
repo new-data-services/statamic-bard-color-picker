@@ -2,7 +2,7 @@
 
 namespace Ndx\BardColorPicker;
 
-use Ndx\BardColorPicker\Marks\Color;
+use Ndx\BardColorPicker\Marks\TextColor;
 use Statamic\Fieldtypes\Bard\Augmentor;
 use Statamic\Providers\AddonServiceProvider;
 use Statamic\Statamic;
@@ -13,24 +13,21 @@ class ServiceProvider extends AddonServiceProvider
     {
         parent::boot();
 
-        Augmentor::addExtension('color', new Color());
+        Augmentor::addExtension('textColor', new TextColor());
     }
 
     public function bootAddon(): void
     {
         $name    = $this->getAddon()->packageName();
         $version = $this->getAddon()->version();
-        $theme   = config('statamic.bard-color-picker.theme', 'nano');
 
         $this->publishes([
-            __DIR__ . '/../dist/js/bard-color-picker.js' => public_path("vendor/{$name}/js/bard-color-picker.js"),
-            __DIR__ . '/../dist/css/classic.css'         => public_path("vendor/{$name}/css/classic.css"),
-            __DIR__ . '/../dist/css/monolith.css'        => public_path("vendor/{$name}/css/monolith.css"),
-            __DIR__ . '/../dist/css/nano.css'            => public_path("vendor/{$name}/css/nano.css"),
+            __DIR__ . '/../dist/js/addon.js'   => public_path("vendor/{$name}/js/addon.js"),
+            __DIR__ . '/../dist/css/addon.css' => public_path("vendor/{$name}/css/addon.css"),
         ], 'bard-color-picker-assets');
 
-        Statamic::script($name, "bard-color-picker.js?v={$version}");
-        Statamic::style($name, "{$theme}.css?v={$version}");
+        Statamic::script($name, "addon.js?v={$version}");
+        Statamic::style($name, "addon.css?v={$version}");
 
         Statamic::afterInstalled(function ($command) {
             $command->call('vendor:publish', ['--tag' => 'bard-color-picker-assets', '--force' => true]);

@@ -1,18 +1,8 @@
-import tinycolor from 'tinycolor2'
+import { isLightColor } from './../helpers.js'
 
 const { Mark } = Statamic.$bard.tiptap.core
 
-function isLightColor(color) {
-    const processedColor = tinycolor(color)
-
-    if (! processedColor.isValid()) {
-        return false
-    }
-
-    return processedColor.getBrightness() > 175 || processedColor.getAlpha() < 0.25
-}
-
-export const Color = Mark.create({
+const TextColor = Mark.create({
     name: 'textColor',
 
     addAttributes() {
@@ -46,3 +36,5 @@ export const Color = Mark.create({
         }
     },
 })
+
+export default TextColor

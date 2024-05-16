@@ -12,6 +12,7 @@ export default [
                 _: 'readonly',
                 __: 'readonly',
                 Statamic: 'readonly',
+                BardToolbarButton: 'readonly',
             },
         },
         rules: {
