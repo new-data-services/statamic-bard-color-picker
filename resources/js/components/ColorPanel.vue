@@ -98,7 +98,7 @@
         },
 
         mounted() {
-            this.colorFieldtypeConfig = { ...this.colorFieldtypeConfig, ...Statamic.$config.get('bard-color-picker') };
+            this.colorFieldtypeConfig = { ...this.colorFieldtypeConfig, ...Statamic.$config.get('bard-color-picker') }
         },
     }
 </script>
