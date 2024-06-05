@@ -1,4 +1,4 @@
-import { isLightColor } from './../helpers.js'
+import { inspectColor } from './../helpers.js'
 
 const { Mark } = Statamic.$bard.tiptap.core
 
@@ -15,13 +15,13 @@ const TextColor = Mark.create({
     },
 
     renderHTML({ HTMLAttributes }) {
-        let style = `color: ${HTMLAttributes.color};`
+        const { isDarkColor, isLightColor } = inspectColor(HTMLAttributes.color)
 
-        if (isLightColor(HTMLAttributes.color)) {
-            style += 'text-shadow: 0 0 3px rgba(0, 0, 0, .8);'
-        }
-
-        return ['span', { style }, 0]
+        return ['span', {
+            style: `color: ${HTMLAttributes.color};`,
+            ...(isDarkColor && { 'data-dark-color': true }),
+            ...(isLightColor && { 'data-light-color': true }),
+        }, 0]
     },
 
     addCommands() {
