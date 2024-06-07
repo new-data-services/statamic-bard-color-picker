@@ -26,7 +26,7 @@ const TextColor = Mark.create({
 
     addCommands() {
         return {
-            setColor: attributes => ({ chain }) => {
+            setTextColor: attributes => ({ chain }) => {
                 if (attributes.color) {
                     return chain().setMark(this.name, attributes).run()
                 }

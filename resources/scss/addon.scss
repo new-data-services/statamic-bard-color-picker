@@ -58,6 +58,21 @@ html {
                 height: 100%;
                 padding: 0 2px;
                 background: transparent;
+                position: relative;
+
+                &[data-has-placeholder]::after {
+                    content: "";
+                    position: absolute;
+                    inset: 3px;
+                    background-image: repeating-linear-gradient(-45deg, #fafcff 0 12px, #eef2f6 12px 15px);
+                    pointer-events: none;
+                    border: 1px solid #d1d5db;
+
+                    html.dark & {
+                        background-image: repeating-linear-gradient(-45deg, #3b3f41 0 12px, #242628 12px 15px);
+                        border-color: #171717;
+                    }
+                }
             }
 
             button.ndx-text-color-reset {
