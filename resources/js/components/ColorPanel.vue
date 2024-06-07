@@ -73,6 +73,8 @@
 </template>
 
 <script>
+    import { covertToHex } from '../helpers'
+
     export default {
         mixins: [BardToolbarButton],
 
@@ -120,7 +122,9 @@
                 ...Statamic.$config.get('bard-color-picker'),
             }
 
-            this.$refs.popover.$on('opened', () => this.customColor = this.currentTextColor)
+            this.$refs.popover.$on('opened', () => {
+                this.customColor = covertToHex(this.currentTextColor ?? '')
+            })
         },
     }
 </script>
