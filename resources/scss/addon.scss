@@ -26,9 +26,21 @@ html {
             align-items: center;
             width: 2.5rem;
             height: 2.5rem;
-            border: 1px solid rgb(221 227 233);
+            border: 1px solid #dde3e9;
             border-radius: .25rem;
             cursor: pointer;
+
+            &.ndx-text-color-swatch-reset {
+                background-image: repeating-linear-gradient(-45deg, #fafcff 0 8px, #eef2f6 8px 10px);
+            }
+
+            html.dark & {
+                border-color: #171717;
+
+                &.ndx-text-color-swatch-reset {
+                    background-image: repeating-linear-gradient(-45deg, #3b3f41 0 8px, #242628 8px 10px);
+                }
+            }
 
             svg {
                 width: 50%;
