@@ -8,66 +8,90 @@ html {
     }
 }
 
-.ndx-color-picker .ndx-color-picker-container {
-    padding: 1rem;
+.ndx-text-color {
+    width: 14rem;
+    padding: .5rem .25rem;
 
-    .ndx-color-picker-swatches-container {
+    .ndx-text-color-swatches {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 0.75rem;
+        gap: .75rem;
+        padding: .5rem .75rem;
+        max-height: 13rem;
+        overflow: auto;
 
-        .ndx-color-picker-swatch {
+        button {
             display: flex;
+            justify-content: center;
+            align-items: center;
             width: 2.5rem;
             height: 2.5rem;
-            border-width: 1px;
-            border-color: rgb(156 163 175 / var(--tw-border-opacity));
-            border-radius: 0.25rem;
+            border: 1px solid rgb(221 227 233);
+            border-radius: .25rem;
             cursor: pointer;
 
-            .ndx-color-picker-swatch-selected-icon-container {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 100%;
-                height: 100%;
-
-                .ndx-color-picker-swatch-selected-icon {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 1.25rem;
-                    height: 1.25rem;
-                    border-radius: 9999px;
-                    background-color: rgb(0 0 0 / 0.1);
-                }
+            svg {
+                width: 50%;
+                height: 50%;
+                background: rgb(0 0 0 / .1);
+                border-radius: 100%;
+                padding: .2rem;
             }
         }
     }
 
-    .ndx-color-picker-input-container {
+    .ndx-text-color-input {
         display: flex;
         align-items: center;
+        gap: 1rem;
+        padding: .5rem .75rem;
 
-        &.swatches-spacing {
-            margin-top: 1.25rem;
-        }
-
-        input {
+        .input-text {
+            display: flex;
             height: 2.5rem;
-            cursor: pointer;
-            width: 100%;
-            border-radius: 0.25rem;
-            padding: 2px;
+            padding: 0;
+            margin: 0;
+
+            input[type="color"] {
+                cursor: pointer;
+                width: 100%;
+                height: 100%;
+                padding: 0 2px;
+                background: transparent;
+            }
+
+            button.ndx-text-color-reset {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 1.75rem;
+                padding: 0 .25rem 0 0;
+                margin: 0;
+                flex-shrink: 0;
+                cursor: pointer;
+                font-size: 21px;
+                opacity: .85;
+
+                html:not(.dark) & {
+                    color: #73808c;
+                }
+
+                &:hover {
+                    opacity: 1;
+                }
+
+                &[disabled] {
+                    opacity: .3;
+                    cursor: default;
+                }
+            }
         }
 
-        button {
+        .btn-primary {
+            min-width: 3rem;
             height: 2.5rem;
-            padding: 0 0.5rem;
+            padding: 0 .5rem;
+            margin: 0;
         }
-    }
-
-    .ndx-color-picker-reset-button {
-        margin-top: 1.25rem;
     }
 }
