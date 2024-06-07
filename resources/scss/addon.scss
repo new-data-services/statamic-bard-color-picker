@@ -52,7 +52,7 @@ html {
         }
     }
 
-    .ndx-text-color-input {
+    .ndx-text-color-form {
         display: flex;
         align-items: center;
         gap: 1rem;
@@ -65,24 +65,34 @@ html {
             margin: 0;
             box-shadow: none !important;
 
-            input[type="color"] {
-                cursor: pointer;
+            .ndx-text-color-input {
+                position: relative;
                 width: 100%;
                 height: 100%;
-                padding: 0 2px;
-                background: transparent;
-                position: relative;
-                transition: box-shadow .15s ease-in-out;
 
-                &:focus, &:focus-within {
-                    box-shadow: inset 0 0 0 2px var(--tw-ring-color);
-                    border-radius: 2px;
+                input[type="color"] {
+                    cursor: pointer;
+                    width: 100%;
+                    height: 100%;
+                    padding: 0 2px;
+                    margin: 0;
+                    background: transparent;
+                    position: relative;
+                    transition: box-shadow .15s ease-in-out;
+
+                    &:focus, &:focus-within {
+                        box-shadow: inset 0 0 0 2px var(--tw-ring-color);
+                        border-radius: 2px;
+                    }
+
+                    @supports (-moz-appearance: none) {
+                        padding: 3px;
+                    }
                 }
 
-                &[data-has-placeholder]::after {
-                    content: "";
+                .ndx-text-color-placeholder {
                     position: absolute;
-                    inset: 3px;
+                    inset: 2px;
                     background-image: repeating-linear-gradient(-45deg, #fafcff 0 12px, #eef2f6 12px 15px);
                     pointer-events: none;
                     border: 1px solid #d1d5db;

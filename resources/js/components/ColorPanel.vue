@@ -40,15 +40,18 @@
 
                 <div
                     v-if="colorPickerConfig.allow_any"
-                    class="ndx-text-color-input"
+                    class="ndx-text-color-form"
                 >
                     <div class="input-text">
-                        <input
-                            type="color"
-                            :value="customColor || '#ffffff'"
-                            :data-has-placeholder="! customColor"
-                            @input="event => customColorFromPicker(event.target.value)"
-                        />
+                        <div class="ndx-text-color-input">
+                            <input
+                                type="color"
+                                :value="customColor || '#ffffff'"
+                                @input="event => customColorFromPicker(event.target.value)"
+                            />
+
+                            <span v-if="! customColor" class="ndx-text-color-placeholder"></span>
+                        </div>
 
                         <button
                             :aria-label="__('Remove')"
