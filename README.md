@@ -1,6 +1,6 @@
 <!-- statamic:hide -->
 
-# Bard Color Picker
+# Statamic Bard Text Color
 
 <!-- /statamic:hide -->
 
@@ -9,10 +9,9 @@
 ## Features
 
 - Set text color in Bard fields
-- Customizable layouts
 - Predefined color swatches
-- Support for HEX, RGB, CMYK and more
 - Beautiful and easy to use color panel
+- Dark Mode Support
 
 ## Installation
 
@@ -30,13 +29,11 @@ Open the blueprint or fieldset that contains your Bard field, open the settings 
 
 ## Configuration
 
-If you want to change the layout, components or predefined colors, make sure that the configuration file is published by entering the following command:
+If you want to define swatches or disable the color picker, make sure that the configuration file is published by entering the following command:
 
 ``` bash
 php artisan vendor:publish --tag=bard-color-picker-config
 ```
-
-This addon uses the [@simonwep/pickr](https://github.com/Simonwep/pickr) package under the hood and supports many configuration options including different layouts.
 
 Have a look at the [configuration file](config/bard-color-picker.php) for details.
 
@@ -50,7 +47,6 @@ Visit our website: [new-data-services.de](https://new-data-services.de/)
 
 ---
 
-<a href="https://statamic.com/addons/new-data-services/bard-color-picker"><img src="https://img.shields.io/badge/Statamic-3.4+-FF269E?style=for-the-badge"></a>
 <a href="https://packagist.org/packages/ndx/statamic-bard-color-picker"><img src="https://img.shields.io/packagist/v/ndx/statamic-bard-color-picker?style=for-the-badge"></a>
 <a href="https://packagist.org/packages/ndx/statamic-bard-color-picker"><img src="https://img.shields.io/packagist/dt/ndx/statamic-bard-color-picker?style=for-the-badge"></a>
 
