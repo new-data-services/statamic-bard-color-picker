@@ -16,8 +16,8 @@
                 <div v-if="colorPickerConfig.swatches.length" class="ndx-text-color-swatches">
                     <button
                         v-if="! colorPickerConfig.allow_any"
-                        v-tooltip="__('Remove')"
-                        :aria-label="__('Remove')"
+                        v-tooltip="__('bard-color-picker::general.no_color')"
+                        :aria-label="__('bard-color-picker::general.no_color')"
                         @click="() => customColorFromSwatch(null)"
                         class="ndx-text-color-swatch-reset"
                     >
