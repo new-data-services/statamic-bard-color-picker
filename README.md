@@ -37,6 +37,23 @@ php artisan vendor:publish --tag=bard-color-picker-config
 
 Have a look at the [configuration file](config/bard-color-picker.php) for details.
 
+## Migrate from 1.x
+
+Instead of the @simonwep/pickr package, this addon uses a native HTML color picker since v2.0. This causes some breaking changes.
+
+- Statamic 5 is required
+- Colors are always saved in HEX format
+- The [configuration file](config/bard-color-picker.php) has changed completely
+
+After updating from v1.x to v2.0 we recommend to republish the addon configuration, overwrite old settings and define new ones:
+
+``` bash
+php artisan vendor:publish --tag=bard-color-picker-config --force
+```
+
+Alternatively, you could rename the `recommended` item to `swatches` in your configuration.
+
+
 ## About us
 
 We develop digital solutions for all kinds of disciplines. From the idea and concepts to implementation and operation.
