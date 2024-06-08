@@ -7,7 +7,8 @@ return [
     | Color Swatches
     |--------------------------------------------------------------------------
     |
-    | ..
+    | Specify an array with predefined colors (swatches).
+    | The colors should be in HEX format.
     |
     */
 
@@ -21,7 +22,8 @@ return [
     | Allow any Color
     |--------------------------------------------------------------------------
     |
-    | ..
+    | Set this to false to deactivate the color picker.
+    | (Swatches only mode)
     |
     */
 
