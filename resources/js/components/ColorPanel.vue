@@ -7,7 +7,7 @@
                 :aria-label="button.text"
                 class="bard-toolbar-button"
                 :class="{ 'active' : currentTextColor }"
-                :style="`color: ${currentTextColor || 'inherit'};`"
+                :style="buttonColorStyle"
             />
         </template>
 
@@ -91,6 +91,14 @@
         computed: {
             currentTextColor() {
                 return this.editor.getAttributes('textColor')?.color
+            },
+            buttonColorStyle() {
+                if (this.currentTextColor) {
+                    return {
+                        color: this.currentTextColor
+                    }
+                }
+                return {}
             },
         },
 
