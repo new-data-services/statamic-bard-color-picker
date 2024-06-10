@@ -5,7 +5,7 @@ namespace Ndx\BardColorPicker\Marks;
 use Tiptap\Core\Mark;
 use Tiptap\Utils\HTML;
 
-class Color extends Mark
+class TextColor extends Mark
 {
     public static $name = 'textColor';
 

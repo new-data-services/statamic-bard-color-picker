@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'text_color' => 'Tekst kleur',
+    'text_color' => 'Kleur tekst',
+    'no_color'   => 'Geen kleur',
 ];

@@ -1,18 +1,8 @@
-import tinycolor from 'tinycolor2'
+import { inspectColor } from './../helpers.js'
 
 const { Mark } = Statamic.$bard.tiptap.core
 
-function isLightColor(color) {
-    const processedColor = tinycolor(color)
-
-    if (! processedColor.isValid()) {
-        return false
-    }
-
-    return processedColor.getBrightness() > 175 || processedColor.getAlpha() < 0.25
-}
-
-export const Color = Mark.create({
+const TextColor = Mark.create({
     name: 'textColor',
 
     addAttributes() {
@@ -25,18 +15,18 @@ export const Color = Mark.create({
     },
 
     renderHTML({ HTMLAttributes }) {
-        let style = `color: ${HTMLAttributes.color};`
+        const { isDarkColor, isLightColor } = inspectColor(HTMLAttributes.color)
 
-        if (isLightColor(HTMLAttributes.color)) {
-            style += 'text-shadow: 0 0 3px rgba(0, 0, 0, .8);'
-        }
-
-        return ['span', { style }, 0]
+        return ['span', {
+            style: `color: ${HTMLAttributes.color};`,
+            ...(isDarkColor && { 'data-dark-color': true }),
+            ...(isLightColor && { 'data-light-color': true }),
+        }, 0]
     },
 
     addCommands() {
         return {
-            setColor: attributes => ({ chain }) => {
+            setTextColor: attributes => ({ chain }) => {
                 if (attributes.color) {
                     return chain().setMark(this.name, attributes).run()
                 }
@@ -46,3 +36,5 @@ export const Color = Mark.create({
         }
     },
 })
+
+export default TextColor

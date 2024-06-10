@@ -1,8 +1,8 @@
-import { Color } from './Color.js'
-import ColorPanel from './ColorPanel.vue'
+import ColorPanel from './components/ColorPanel.vue'
+import TextColor from './marks/textColor.js'
 
 Statamic.booting(() => {
-    Statamic.$bard.addExtension(() => Color)
+    Statamic.$bard.addExtension(() => TextColor)
 
     Statamic.$bard.buttons((buttons, button) => {
         const indexOfColorButton = _.findIndex(buttons, (btn) => btn === 'color')
