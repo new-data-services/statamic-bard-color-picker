@@ -2,9 +2,9 @@
 
 # Statamic Bard Text Color
 
-<!-- /statamic:hide -->
+Text color picker with swatches for Bard fields.
 
-> Text color picker with swatches for Bard fields.
+<!-- /statamic:hide -->
 
 ## Features
 
