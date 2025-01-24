@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
 
-  composer:
+  php-cs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -16,7 +16,7 @@ jobs:
       - run: composer update --prefer-stable --prefer-dist --no-interaction --no-suggest
       - run: composer phpcs
 
-  node:
+  eslint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
