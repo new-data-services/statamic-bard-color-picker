@@ -5,8 +5,9 @@
         "watch": "npx mix watch",
         "dev": "npx mix",
         "prod": "npx mix --production",
-        "eslint": "npx eslint resources/js",
-        "eslint:fix": "npx eslint resources/js --fix"
+        "lint": "npx eslint resources/js",
+        "lint:fix": "npx eslint resources/js --fix",
+        "eslint": "npm run lint"
     },
     "dependencies": {},
     "devDependencies": {

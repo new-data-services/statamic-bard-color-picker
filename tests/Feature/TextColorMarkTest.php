@@ -20,7 +20,7 @@ it('renders text color marks', function () {
     ];
 
     $this->assertEquals(
-        (new Bard())->augment($content),
+        (new Bard)->augment($content),
         '<p><span style="color: #01D7B0;">And the world will be as one</span></p>'
     );
 });
