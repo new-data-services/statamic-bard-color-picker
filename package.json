@@ -2,26 +2,25 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "watch": "npx mix watch",
-        "dev": "npx mix",
-        "prod": "npx mix --production",
+        "watch": "npx vite",
+        "dev": "vite build --mode development --minify false --sourcemap",
+        "dev:watch": "vite build --mode development --minify false --sourcemap --watch",
+        "prod": "vite build --mode production",
+        "prod:watch": "vite build --mode production --watch",
         "lint": "npx eslint resources/js",
         "lint:fix": "npx eslint resources/js --fix",
         "eslint": "npm run lint"
     },
     "dependencies": {},
     "devDependencies": {
-        "@eslint/js": "^9.1.1",
-        "autoprefixer": "^10.4.19",
-        "eslint": "^9.1.1",
-        "eslint-plugin-vue": "^9.25.0",
-        "laravel-mix": "^6.0.49",
-        "resolve-url-loader": "^5.0.0",
-        "sass": "^1.76.0",
-        "sass-loader": "^12.1.0",
+        "@eslint/js": "^9.33.0",
+        "@vitejs/plugin-vue2": "^2.3.3",
+        "eslint": "^9.33.0",
+        "eslint-plugin-vue": "^9.33.0",
+        "laravel-vite-plugin": "^0.7.8",
         "tinycolor2": "^1.6.0",
-        "vue-loader": "^15.9.8",
-        "vue-template-compiler": "^2.7.16"
+        "vite": "^4.5.14",
+        "vue": "^2.7.16"
     },
     "browserslist": {
         "defaults": [

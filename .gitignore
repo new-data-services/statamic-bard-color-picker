@@ -3,6 +3,7 @@
 /.phpunit.cache
 /.phpunit.result.cache
 /composer.lock
+/dist
 /node_modules
 /package-lock.json
 /vendor
@@ -10,4 +11,3 @@
 /yarn-error.log
 .DS_*
 .env
-mix-manifest.json
