@@ -9,29 +9,20 @@ use Statamic\Statamic;
 
 class ServiceProvider extends AddonServiceProvider
 {
+    protected $vite = [
+        'hotFile' => __DIR__ . '/../dist/vite.hot',
+        'input'   => [
+            'resources/js/addon.js',
+            'resources/css/addon.css',
+        ],
+        'publicDirectory' => 'dist',
+    ];
+
     public function boot()
     {
         parent::boot();
 
         Augmentor::addExtension('textColor', new TextColor);
-    }
-
-    public function bootAddon(): void
-    {
-        $name    = $this->getAddon()->packageName();
-        $version = $this->getAddon()->version();
-
-        $this->publishes([
-            __DIR__ . '/../dist/js/addon.js'   => public_path("vendor/{$name}/js/addon.js"),
-            __DIR__ . '/../dist/css/addon.css' => public_path("vendor/{$name}/css/addon.css"),
-        ], 'bard-color-picker-assets');
-
-        Statamic::script($name, "addon.js?v={$version}");
-        Statamic::style($name, "addon.css?v={$version}");
-
-        Statamic::afterInstalled(function ($command) {
-            $command->call('vendor:publish', ['--tag' => 'bard-color-picker-assets', '--force' => true]);
-        });
     }
 
     protected function bootConfig(): self
