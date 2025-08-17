@@ -14,4 +14,5 @@ export default defineConfig({
         }),
         vue(),
     ],
+    css: { postcss: __dirname },
 })
