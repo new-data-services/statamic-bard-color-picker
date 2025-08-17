@@ -9,5 +9,6 @@
 /vendor
 /yarn.lock
 /yarn-error.log
+vite.hot
 .DS_*
 .env
