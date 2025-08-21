@@ -1,14 +1,17 @@
 <template>
-    <popover ref="popover" placement="bottom-start">
+    <Popover ref="popover" :inset="true" v-model:open="panelOpen">
         <template #trigger>
-            <button
-                v-html="button.html"
+            <Button
+                variant="ghost"
+                size="sm"
                 v-tooltip="button.text"
                 :aria-label="button.text"
-                class="bard-toolbar-button"
+                class="px-2!"
                 :class="{ 'active' : currentTextColor }"
                 :style="buttonColorStyle"
-            />
+            >
+                <div class="flex items-center" v-html="button.html" />
+            </Button>
         </template>
 
         <template #default>
@@ -69,14 +72,20 @@
                 </div>
             </div>
         </template>
-    </popover>
+    </Popover>
 </template>
 
 <script>
+    import { ToolbarButtonMixin } from '@statamic/cms/bard'
+    import { Popover } from '@statamic/cms/ui'
     import { covertToHex } from '../helpers'
 
     export default {
-        mixins: [BardToolbarButton],
+        mixins: [ToolbarButtonMixin],
+
+        components: {
+            Popover,
+        },
 
         data() {
             return {
@@ -85,6 +94,7 @@
                     swatches: [],
                 },
                 customColor: null,
+                panelOpen: false,
             }
         },
 
@@ -120,8 +130,18 @@
 
                 this.editor.commands.setTextColor({ color: this.customColor })
 
-                this.$refs.popover.close()
+                this.panelOpen = false
             },
+        },
+
+        watch: {
+            panelOpen(panelOpen) {
+                if (panelOpen) {
+                    this.customColor = covertToHex(this.currentTextColor ?? '')
+                } else {
+                    this.editor.commands.focus()
+                }
+            }
         },
 
         mounted() {
@@ -129,10 +149,6 @@
                 ...this.colorPickerConfig,
                 ...Statamic.$config.get('bard-color-picker'),
             }
-
-            this.$refs.popover.$on('opened', () => {
-                this.customColor = covertToHex(this.currentTextColor ?? '')
-            })
         },
     }
 </script>

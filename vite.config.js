@@ -1,9 +1,10 @@
 import { defineConfig } from 'vite'
 import laravel from 'laravel-vite-plugin'
-import vue from '@vitejs/plugin-vue2'
- 
+import statamic from '@statamic/cms/vite-plugin'
+
 export default defineConfig({
     plugins: [
+        statamic(),
         laravel({
             hotFile: 'dist/vite.hot',
             input: [
@@ -12,7 +13,6 @@ export default defineConfig({
             ],
             publicDirectory: 'dist',
         }),
-        vue(),
     ],
     css: { postcss: __dirname },
 })
