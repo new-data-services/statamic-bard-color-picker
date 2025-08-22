@@ -19,5 +19,5 @@ jobs:
           php-version: ${{ matrix.php }}
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite
           coverage: none
-      - run: composer update --prefer-stable --prefer-dist --no-interaction --no-suggest
+      - run: composer update --prefer-stable --prefer-dist --no-interaction
       - run: composer run test

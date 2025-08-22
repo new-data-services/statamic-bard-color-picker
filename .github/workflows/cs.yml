@@ -3,8 +3,7 @@ name: Coding Standards
 on: [push, pull_request]
 
 jobs:
-
-  php-cs:
+  cs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -13,15 +12,10 @@ jobs:
           php-version: 8.4
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite
           coverage: none
-      - run: composer update --prefer-stable --prefer-dist --no-interaction --no-suggest
-      - run: composer run phpcs
-
-  eslint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: '22.x'
+      - run: composer update --prefer-stable --prefer-dist --no-interaction
+      - run: composer run phpcs
       - run: yarn install
       - run: yarn run lint
