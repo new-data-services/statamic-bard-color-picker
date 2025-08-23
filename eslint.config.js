@@ -9,10 +9,8 @@ export default [
             ecmaVersion: 2022,
             sourceType: 'module',
             globals: {
-                _: 'readonly',
                 __: 'readonly',
                 Statamic: 'readonly',
-                BardToolbarButton: 'readonly',
             },
         },
         rules: {
@@ -32,6 +30,7 @@ export default [
             'semi': ['error', 'never'],
             'space-before-blocks': ['error', 'always'],
             'space-before-function-paren': ['error', { 'named': 'never', 'anonymous': 'always', 'asyncArrow': 'always' }],
+            'vue/no-reserved-component-names': 'off',
         },
     },
 ]

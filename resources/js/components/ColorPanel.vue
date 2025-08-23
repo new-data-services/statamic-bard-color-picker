@@ -1,5 +1,5 @@
 <template>
-    <ui-popover class="ndx-text-color-panel" v-model:open="panelOpen">
+    <Popover class="ndx-text-color-panel" v-model:open="panelOpen">
         <template #trigger>
             <Button
                 variant="ghost"
@@ -22,7 +22,7 @@
                     @click="() => customColorFromSwatch(null)"
                     class="ndx-text-color-swatch-reset"
                 >
-                    <ui-icon name="checkmark" v-if="! customColor" />
+                    <Icon name="checkmark" v-if="! customColor" />
                 </button>
 
                 <button
@@ -31,7 +31,7 @@
                     @click="() => customColorFromSwatch(swatch)"
                     :style="{ 'background-color': swatch }"
                 >
-                    <ui-icon name="checkmark" v-if="customColor && swatch.toLowerCase() === customColor.toLowerCase()" />
+                    <Icon name="checkmark" v-if="customColor && swatch.toLowerCase() === customColor.toLowerCase()" />
                 </button>
             </div>
 
@@ -40,7 +40,7 @@
                 class="ndx-text-color-form"
             >
                 <div class="ndx-text-color-input">
-                    <ui-input
+                    <Input
                         type="color"
                         :value="customColor || '#ffffff'"
                         @input="event => customColorFromPicker(event.target.value)"
@@ -49,7 +49,7 @@
                     <span v-if="! customColor" class="ndx-text-color-placeholder"></span>
                 </div>
 
-                <ui-button
+                <Button
                     icon="x"
                     :aria-label="__('Remove')"
                     :disabled="! customColor"
@@ -61,22 +61,30 @@
                     class="ndx-text-color-reset"
                 />
 
-                <ui-button
+                <Button
                     :text="__('OK')"
                     variant="primary"
                     @click="() => setTextColor()"
                 />
             </div>
         </template>
-    </ui-popover>
+    </Popover>
 </template>
 
 <script>
     import { ToolbarButtonMixin } from '@statamic/cms/bard'
+    import { Popover, Button, Input, Icon } from '@statamic/cms/ui'
     import { covertToHex } from '../helpers'
 
     export default {
         mixins: [ToolbarButtonMixin],
+
+        components: {
+            Popover,
+            Button,
+            Input,
+            Icon,
+        },
 
         data() {
             return {
@@ -93,6 +101,7 @@
             currentTextColor() {
                 return this.editor.getAttributes('textColor')?.color
             },
+
             buttonColorStyle() {
                 if (this.currentTextColor) {
                     return {
@@ -111,9 +120,11 @@
                     this.setTextColor()
                 }
             },
+
             customColorFromPicker(color) {
                 this.customColor = color
             },
+
             setTextColor() {
                 if (this.editor.state.selection.empty) {
                     this.editor.commands.extendMarkRange('textColor')
