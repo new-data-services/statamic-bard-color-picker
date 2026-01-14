@@ -11,18 +11,34 @@ const TextColor = (tiptap) => {
                 color: {
                     default: null,
                     parseHTML: element => element.style.color?.replace(/['"]+/g, ''),
+                    renderHTML: attributes => {
+                        if (! attributes.color) {
+                            return {}
+                        }
+
+                        const { isDarkColor, isLightColor } = inspectColor(attributes.color)
+
+                        return {
+                            style: `color: ${attributes.color}`,
+                            ...(isDarkColor && { 'data-dark-color': true }),
+                            ...(isLightColor && { 'data-light-color': true }),
+                        }
+                    },
                 },
             }
         },
 
-        renderHTML({ HTMLAttributes }) {
-            const { isDarkColor, isLightColor } = inspectColor(HTMLAttributes.color)
+        parseHTML() {
+            return [
+                {
+                    tag: 'span',
+                    getAttrs: element => element.style.color ? { color: element.style.color } : false,
+                },
+            ]
+        },
 
-            return ['span', {
-                style: `color: ${HTMLAttributes.color};`,
-                ...(isDarkColor && { 'data-dark-color': true }),
-                ...(isLightColor && { 'data-light-color': true }),
-            }, 0]
+        renderHTML({ HTMLAttributes }) {
+            return ['span', HTMLAttributes, 0]
         },
 
         addCommands() {
