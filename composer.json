@@ -11,12 +11,12 @@
         }
     ],
     "require": {
-        "statamic/cms": "6.*"
+        "statamic/cms": "^6.0"
     },
     "require-dev": {
-        "orchestra/testbench": "^8.0|^9.0",
-        "pestphp/pest": "^2.34",
-        "laravel/pint": "^1.15"
+        "orchestra/testbench": "^10.9",
+        "pestphp/pest": "^4.3",
+        "laravel/pint": "^1.27"
     },
     "autoload": {
         "psr-4": {

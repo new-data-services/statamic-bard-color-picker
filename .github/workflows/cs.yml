@@ -6,16 +6,16 @@ jobs:
   cs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: shivammathur/setup-php@v2
         with:
           php-version: 8.4
-          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite
+          tools: composer:v2
           coverage: none
       - uses: actions/setup-node@v3
         with:
           node-version: '22.x'
-      - run: composer update --prefer-stable --prefer-dist --no-interaction
+      - run: composer install --no-interaction --prefer-dist --optimize-autoloader
       - run: composer run phpcs
       - run: yarn install
       - run: yarn run lint
