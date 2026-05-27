@@ -2,13 +2,13 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "watch": "npx vite",
+        "watch": "vite",
         "dev": "vite build --mode development --minify false --sourcemap",
         "dev:watch": "vite build --mode development --minify false --sourcemap --watch",
         "prod": "vite build --mode production",
         "prod:watch": "vite build --mode production --watch",
-        "lint": "npx eslint resources/js",
-        "lint:fix": "npx eslint resources/js --fix",
+        "lint": "eslint resources/js",
+        "lint:fix": "eslint resources/js --fix",
         "eslint": "npm run lint"
     },
     "dependencies": {},

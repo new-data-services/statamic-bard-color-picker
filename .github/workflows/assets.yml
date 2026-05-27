@@ -25,8 +25,8 @@ jobs:
         with:
           node-version: '22.x'
       - run: composer install --no-interaction --prefer-dist --optimize-autoloader
-      - run: yarn install
-      - run: yarn run prod
+      - run: npm install
+      - run: npm run prod
       - uses: stefanzweifel/git-auto-commit-action@v6
         with:
           commit_message: build dist assets

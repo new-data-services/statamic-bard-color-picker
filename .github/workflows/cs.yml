@@ -17,5 +17,5 @@ jobs:
           node-version: '22.x'
       - run: composer install --no-interaction --prefer-dist --optimize-autoloader
       - run: composer run phpcs
-      - run: yarn install
-      - run: yarn run lint
+      - run: npm install
+      - run: npm run lint
